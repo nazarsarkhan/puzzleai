@@ -28,7 +28,7 @@
   },
   "exports": {
     "blend": null,
-    "fbx": null,
+    "fbx": "puzzle_009.fbx",
     "glb": null
   },
   "generator_version": "0.1.0",

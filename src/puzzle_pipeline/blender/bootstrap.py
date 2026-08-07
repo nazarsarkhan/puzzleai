@@ -53,4 +53,20 @@ def run_blender_generation(
         return BlenderResult("failed", f"Blender subprocess failed: {exc}", command)
     if completed.returncode != 0:
         return BlenderResult("failed", "Blender generation failed.", command, completed.stdout, completed.stderr)
+    if "fbx" in formats and not (output_dir / "models" / "puzzle.fbx").is_file():
+        return BlenderResult(
+            "failed",
+            "Blender exited without producing models/puzzle.fbx.",
+            command,
+            completed.stdout,
+            completed.stderr,
+        )
+    if "fbx" in formats and not (output_dir / "reports" / "fbx-reimport-report.json").is_file():
+        return BlenderResult(
+            "failed",
+            "Blender exited without producing reports/fbx-reimport-report.json.",
+            command,
+            completed.stdout,
+            completed.stderr,
+        )
     return BlenderResult("passed", "Blender scene and exports generated.", command, completed.stdout, completed.stderr)

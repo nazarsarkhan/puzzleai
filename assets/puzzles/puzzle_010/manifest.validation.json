@@ -30,7 +30,7 @@
   },
   "errors": [],
   "expectedPieceCount": 12,
-  "exportStatus": "unavailable",
+  "exportStatus": "passed",
   "metrics": {
     "bevel_width": 0.012,
     "degenerate_triangles": 0.0,
