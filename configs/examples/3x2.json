@@ -1,0 +1,30 @@
+{
+  "puzzle_id": "example_3x2",
+  "seed": 42,
+  "grid": {
+    "columns": 3,
+    "rows": 2
+  },
+  "board": {
+    "width": 4.8,
+    "height": 3.2,
+    "thickness": 0.07
+  },
+  "piece": {
+    "bevel_width": 0.012,
+    "bevel_segments": 2
+  },
+  "seams": {
+    "tab_radius_ratio": 0.18,
+    "position_jitter": 0.08,
+    "shape_jitter": 0.12
+  },
+  "atlas": {
+    "size": 2048,
+    "padding": 8
+  },
+  "export": {
+    "formats": ["fbx"],
+    "apply_transforms": true
+  }
+}
