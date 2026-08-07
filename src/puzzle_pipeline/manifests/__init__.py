@@ -1,0 +1,1 @@
+"""Schema-versioned output manifests."""

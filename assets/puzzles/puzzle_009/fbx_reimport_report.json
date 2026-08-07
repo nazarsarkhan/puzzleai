@@ -1,0 +1,18 @@
+{
+  "command": [
+    "C:\\Program Files (x86)\\Steam\\steamapps\\common\\Blender\\blender.EXE",
+    "--background",
+    "--python",
+    "C:\\Users\\nazar\\Desktop\\models\\scripts\\blender_generate.py",
+    "--",
+    "--scene-input",
+    "C:\\Users\\nazar\\AppData\\Local\\Temp\\puzzle-pipeline-batch-exyglo02\\core\\puzzle_009\\blender\\scene-input.json",
+    "--output",
+    "C:\\Users\\nazar\\AppData\\Local\\Temp\\puzzle-pipeline-batch-exyglo02\\core\\puzzle_009",
+    "--formats",
+    "fbx"
+  ],
+  "message": "Blender scene and exports generated.",
+  "status": "passed",
+  "valid": true
+}

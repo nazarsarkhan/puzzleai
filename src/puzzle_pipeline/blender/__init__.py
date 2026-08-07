@@ -1,0 +1,1 @@
+"""Optional headless Blender integration."""

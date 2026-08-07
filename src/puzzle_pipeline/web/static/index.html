@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Roblox Puzzle Asset Studio</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Roblox asset compiler</p>
+        <h1>Turn an artwork into a playable puzzle.</h1>
+        <p class="lede">Upload an image. Review the recommended layout. Export a validated Roblox package.</p>
+      </section>
+
+      <section class="card upload-card">
+        <form id="upload-form">
+          <label class="dropzone" for="image-input">
+            <span class="drop-icon">＋</span>
+            <span><strong>Choose an artwork image</strong><small>PNG, JPG, or WEBP</small></span>
+            <input id="image-input" type="file" accept="image/png,image/jpeg,image/webp" required />
+          </label>
+          <div class="preview-row hidden" id="upload-preview-row">
+            <img id="upload-preview" alt="Selected artwork preview" />
+            <div><p id="file-name"></p><button type="submit" class="primary">Analyze artwork</button></div>
+          </div>
+        </form>
+      </section>
+
+      <section class="card hidden" id="recommendation-card">
+        <div class="section-heading"><div><p class="eyebrow">Recommendation</p><h2>Review the puzzle layout</h2></div><span class="badge" id="recommendation-source"></span></div>
+        <div class="recommendation-grid">
+          <div class="art-panel"><img id="analysis-preview" alt="Artwork preview" /></div>
+          <div class="controls">
+            <label>Orientation<input id="orientation" disabled /></label>
+            <label>Columns<input id="columns" type="number" min="2" max="12" /></label>
+            <label>Rows<input id="rows" type="number" min="2" max="12" /></label>
+            <label>Crop mode<select id="crop-mode"><option value="preserve">Preserve full image</option><option value="cover">Crop to board</option><option value="contain">Fit with padding</option></select></label>
+            <p id="piece-count" class="piece-count"></p>
+            <button id="generate-button" class="primary" type="button">Generate Roblox package</button>
+          </div>
+        </div>
+        <ul id="recommendation-notes" class="notes"></ul>
+      </section>
+
+      <section class="card hidden" id="job-card">
+        <p class="eyebrow">Export</p><h2 id="job-status">Generating…</h2><p id="job-message">The deterministic compiler is building and validating the package.</p>
+        <img id="completion-preview" class="completion hidden" alt="Completed puzzle preview" />
+        <a id="download-link" class="primary download hidden" download>Download Roblox ZIP</a>
+      </section>
+      <p id="error" class="error hidden"></p>
+    </main>
+    <script src="/static/app.js"></script>
+  </body>
+</html>
