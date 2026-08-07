@@ -90,11 +90,11 @@ def run_core_pipeline(config: PuzzleConfig, image: Path, output_root: Path) -> G
     package_dir = output_root / config.puzzle_id
     for directory in ("source", "textures", "models", "blender", "manifests", "reports", "debug"):
         (package_dir / directory).mkdir(parents=True, exist_ok=True)
+    artwork = load_artwork(image)
     source_target = package_dir / "source" / image.name
     if image.resolve() != source_target.resolve():
         shutil.copy2(image, source_target)
     board = board_coordinates(config)
-    artwork = load_artwork(image)
     atlas = build_atlas(artwork, config.atlas, board, package_dir / "textures" / f"{config.puzzle_id}_atlas.png")
     geometry = generate_puzzle_geometry(config)
     meshes = tuple(
