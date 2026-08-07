@@ -29,6 +29,7 @@ class MeshData:
     regions: tuple[SurfaceRegion, ...]
     uvs: tuple[UV, ...]
     thickness: float
+    corner_uvs: tuple[tuple[UV, UV, UV], ...] = ()
 
     @property
     def triangle_count(self) -> int:
