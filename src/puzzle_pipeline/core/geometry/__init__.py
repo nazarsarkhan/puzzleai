@@ -1,0 +1,1 @@
+"""Parametric puzzle geometry primitives."""
