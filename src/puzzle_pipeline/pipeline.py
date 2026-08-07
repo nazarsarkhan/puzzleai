@@ -129,7 +129,19 @@ def run_core_pipeline(config: PuzzleConfig, image: Path, output_root: Path) -> G
             for seam in geometry.seams
         },
     )
-    _write_json(package_dir / "blender" / "scene-input.json", {"meshes": [_mesh_json(mesh) for mesh in meshes]})
+    _write_json(
+        package_dir / "blender" / "scene-input.json",
+        {
+            "puzzle_id": config.puzzle_id,
+            "atlas_path": str(package_dir / "textures" / f"{config.puzzle_id}_atlas.png"),
+            "collection_name": f"Puzzle_{config.puzzle_id}",
+            "positions": {
+                piece.id: [piece.center[0], piece.center[1], 0.0]
+                for piece in geometry.pieces
+            },
+            "meshes": [_mesh_json(mesh) for mesh in meshes],
+        },
+    )
     _write_json(
         package_dir / "reports" / "generation-report.json",
         {
