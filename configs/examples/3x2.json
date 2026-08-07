@@ -15,7 +15,11 @@
     "bevel_segments": 2
   },
   "seams": {
-    "tab_radius_ratio": 0.18,
+    "connector_type": "classicSemicircle",
+    "tab_depth_ratio": 0.2,
+    "tab_head_radius_ratio": 0.16,
+    "tab_neck_width_ratio": 0.1,
+    "tab_shoulder_width_ratio": 0.3,
     "position_jitter": 0.08,
     "shape_jitter": 0.12
   },

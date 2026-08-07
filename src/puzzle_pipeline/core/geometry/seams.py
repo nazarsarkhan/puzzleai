@@ -8,7 +8,7 @@ from puzzle_pipeline.config.models import GridConfig, SeamConfig
 from puzzle_pipeline.core.random import SeededRng
 from puzzle_pipeline.core.types import EdgeKind, Point2, Side
 
-from .curves import curve_samples
+from .curves import classic_semicircle_samples
 
 Owner = tuple[str, Side, EdgeKind]
 
@@ -60,20 +60,23 @@ class SeamGraph:
                         0.5 + vertical_rng.uniform(-config.position_jitter, config.position_jitter),
                     ),
                 )
-                depth = (
-                    cell_width
-                    * config.tab_radius_ratio
-                    * (1.0 + vertical_rng.uniform(-config.shape_jitter, config.shape_jitter))
+                depth = cell_width * config.tab_depth_ratio * (
+                    1.0 + vertical_rng.uniform(-config.shape_jitter, config.shape_jitter)
                 )
-                half_width = min(
-                    0.27,
-                    0.18 * (1.0 + vertical_rng.uniform(-config.shape_jitter, config.shape_jitter)),
+                head_radius_ratio = config.tab_head_radius_ratio * (
+                    1.0 + vertical_rng.uniform(-config.shape_jitter, config.shape_jitter)
                 )
                 x = min_x + column * cell_width
                 y0 = min_y + row * cell_height
                 points = tuple(
                     (x + offset, y0 + t * cell_height)
-                    for t, offset in curve_samples(center, half_width, depth, config.edge_resolution)
+                    for t, offset in classic_semicircle_samples(
+                        center,
+                        cell_height,
+                        depth,
+                        head_radius_ratio,
+                        config.edge_resolution,
+                    )
                 )
                 left_id = piece_id(row, column - 1)
                 right_id = piece_id(row, column)
@@ -97,20 +100,23 @@ class SeamGraph:
                         0.5 + horizontal_rng.uniform(-config.position_jitter, config.position_jitter),
                     ),
                 )
-                depth = (
-                    cell_height
-                    * config.tab_radius_ratio
-                    * (1.0 + horizontal_rng.uniform(-config.shape_jitter, config.shape_jitter))
+                depth = cell_height * config.tab_depth_ratio * (
+                    1.0 + horizontal_rng.uniform(-config.shape_jitter, config.shape_jitter)
                 )
-                half_width = min(
-                    0.27,
-                    0.18 * (1.0 + horizontal_rng.uniform(-config.shape_jitter, config.shape_jitter)),
+                head_radius_ratio = config.tab_head_radius_ratio * (
+                    1.0 + horizontal_rng.uniform(-config.shape_jitter, config.shape_jitter)
                 )
                 x0 = min_x + column * cell_width
                 y = min_y + row * cell_height
                 points = tuple(
                     (x0 + t * cell_width, y + offset)
-                    for t, offset in curve_samples(center, half_width, depth, config.edge_resolution)
+                    for t, offset in classic_semicircle_samples(
+                        center,
+                        cell_width,
+                        depth,
+                        head_radius_ratio,
+                        config.edge_resolution,
+                    )
                 )
                 lower_id = piece_id(row - 1, column)
                 upper_id = piece_id(row, column)

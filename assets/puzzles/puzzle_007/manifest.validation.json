@@ -31,9 +31,9 @@
     "non_manifold_edges": 0.0,
     "pieces": 9.0,
     "seams": 12.0,
-    "signed_volume": 0.11563815589789175,
-    "triangles": 100.0,
-    "uv_count": 52.0
+    "signed_volume": 0.11167469270645775,
+    "triangles": 164.0,
+    "uv_count": 84.0
   },
   "status": "passed",
   "valid": true,

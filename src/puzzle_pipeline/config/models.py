@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from typing import Literal
 
-from pydantic import BaseModel, ConfigDict, Field, field_validator
+from pydantic import AliasChoices, BaseModel, ConfigDict, Field, field_validator
 
 
 class StrictModel(BaseModel):
@@ -28,7 +28,16 @@ class PieceConfig(StrictModel):
 
 
 class SeamConfig(StrictModel):
-    tab_radius_ratio: float = Field(default=0.18, gt=0.01, lt=0.45)
+    connector_type: Literal["classicSemicircle"] = "classicSemicircle"
+    tab_depth_ratio: float = Field(
+        default=0.2,
+        validation_alias=AliasChoices("tab_depth_ratio", "tab_radius_ratio"),
+        gt=0.01,
+        lt=0.45,
+    )
+    tab_head_radius_ratio: float = Field(default=0.16, gt=0.02, lt=0.35)
+    tab_neck_width_ratio: float = Field(default=0.1, gt=0.01, lt=0.4)
+    tab_shoulder_width_ratio: float = Field(default=0.3, gt=0.05, lt=0.6)
     position_jitter: float = Field(default=0.08, ge=0, le=0.4)
     shape_jitter: float = Field(default=0.12, ge=0, le=0.4)
     edge_resolution: int = Field(default=10, ge=4, le=32)

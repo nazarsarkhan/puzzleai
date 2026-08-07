@@ -9,8 +9,10 @@ lower owner receives a `TAB`; the right or upper owner receives the complementar
 `HOLE`. Both outlines reference the same sampled global boundary points, reversed
 only for polygon winding. Borders are always flat.
 
-Outlines use a smooth parametric classic-jigsaw connector with bounded center,
-shape, and depth jitter. Ear-clipping triangulation converts each counter-clockwise
+Outlines use the reference `classicSemicircle` connector: the head radius is
+`0.16 × edge length`, maximum tab depth is `0.20 × perpendicular cell size`, and
+the narrow neck/shoulder ratios are `0.10` and `0.30`. Center and shape jitter are
+seeded and bounded. Ear-clipping triangulation converts each counter-clockwise
 outline into a front face and reversed back face. Two triangles per outline edge
 close the side walls, producing a watertight solid with positive signed volume.
 

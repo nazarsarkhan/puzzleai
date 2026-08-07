@@ -6,9 +6,9 @@
     "C:\\Users\\nazar\\Desktop\\models\\scripts\\blender_generate.py",
     "--",
     "--scene-input",
-    "C:\\Users\\nazar\\AppData\\Local\\Temp\\puzzle-pipeline-batch-9ll8g3c1\\core\\puzzle_010\\blender\\scene-input.json",
+    "C:\\Users\\nazar\\AppData\\Local\\Temp\\puzzle-pipeline-batch-exyglo02\\core\\puzzle_010\\blender\\scene-input.json",
     "--output",
-    "C:\\Users\\nazar\\AppData\\Local\\Temp\\puzzle-pipeline-batch-9ll8g3c1\\core\\puzzle_010",
+    "C:\\Users\\nazar\\AppData\\Local\\Temp\\puzzle-pipeline-batch-exyglo02\\core\\puzzle_010",
     "--formats",
     "fbx"
   ],
