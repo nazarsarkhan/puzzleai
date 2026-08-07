@@ -19,9 +19,17 @@ dev = [
   "pytest-cov>=5.0",
   "ruff>=0.5",
 ]
+web = [
+  "fastapi>=0.115",
+  "openai>=1.0",
+  "python-multipart>=0.0.9",
+  "python-dotenv>=1.0",
+  "uvicorn>=0.30",
+]
 
 [project.scripts]
 puzzle = "puzzle_pipeline.cli.main:main"
+puzzle-web = "puzzle_pipeline.web.app:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

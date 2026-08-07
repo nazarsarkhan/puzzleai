@@ -19,6 +19,12 @@ drive extrusion, UVs, the atlas, and the Roblox manifest.
 python -m pip install -e ".[dev]"
 ```
 
+To run the browser interface, install the web extras:
+
+```bash
+python -m pip install -e ".[dev,web]"
+```
+
 ## Generate a puzzle
 
 With a JSON config:
@@ -104,3 +110,34 @@ artwork + config
 See [architecture](docs/architecture.md), [geometry](docs/puzzle-geometry.md),
 [UV and atlas](docs/uv-and-atlas.md), [Roblox import](docs/roblox-import.md), and
 the [puzzle_019 reference analysis](docs/reference-puzzle-019.md).
+
+## Browser interface
+
+Start the local web application:
+
+```bash
+puzzle-web
+```
+
+Open `http://127.0.0.1:8000`, upload an artwork image, review the recommended
+orientation and grid, then generate and download the Roblox ZIP package. The
+application works without an AI key using deterministic image-dimension rules.
+
+To enable optional artwork-aware recommendations and richer
+`roblox-overrides.json` metadata, edit the local `.env` file:
+
+```powershell
+Copy-Item .env.example .env
+# Edit .env and set OPENAI_API_KEY=your-key
+puzzle-web
+```
+
+The web layer uses `gpt-4o-mini` for typed artwork recommendations and metadata
+such as `displayName`, `artist`, `year`, `frameLabel`, and curator `notes`. The
+deterministic generator remains responsible for geometry, UVs, FBX export, and
+validation. `.env` is ignored by Git; never commit the key. Set `PUZZLE_WEB_DATA`
+to choose the local job/artifact directory; the default is `.web-data`.
+
+The API boundary is independent of the browser so a future MCP server can call
+the same analyze, generate, status, preview, and download operations before
+adding a local Roblox Studio import bridge.

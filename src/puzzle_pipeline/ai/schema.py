@@ -13,3 +13,7 @@ class ArtworkAnalysis(BaseModel):
     recommended_grid: dict[str, int] | None = None
     decorative_border: bool = False
     notes: str | None = Field(default=None, max_length=1000)
+    display_name: str | None = Field(default=None, max_length=160)
+    artist: str | None = Field(default=None, max_length=160)
+    year: str | None = Field(default=None, max_length=80)
+    frame_label: str | None = Field(default=None, max_length=240)

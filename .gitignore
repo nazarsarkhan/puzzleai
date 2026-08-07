@@ -9,3 +9,5 @@ dist/
 build/
 reference_inspect/
 *.blend1
+.env
+.web-data/
