@@ -3,7 +3,6 @@ from pathlib import Path
 
 from puzzle_pipeline.reference import inspect_reference
 
-
 ROOT = Path(__file__).resolve().parents[2]
 
 

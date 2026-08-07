@@ -5,13 +5,13 @@ from __future__ import annotations
 import json
 import zipfile
 from pathlib import Path
-from typing import Any
+from typing import Any, cast
 
 from PIL import Image
 
 
 def _json(zf: zipfile.ZipFile, name: str) -> dict[str, Any]:
-    return json.loads(zf.read(name).decode("utf-8"))
+    return cast(dict[str, Any], json.loads(zf.read(name).decode("utf-8")))
 
 
 def inspect_reference(archive: Path) -> dict[str, Any]:
