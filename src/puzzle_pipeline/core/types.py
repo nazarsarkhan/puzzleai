@@ -34,3 +34,7 @@ class ValidationResult:
     @classmethod
     def fail(cls, *errors: str, **metrics: float) -> ValidationResult:
         return cls(False, tuple(errors), tuple(metrics.items()))
+
+    @property
+    def metrics_dict(self) -> dict[str, float]:
+        return dict(self.metrics)
