@@ -244,3 +244,24 @@
 - [ ] **Step 4: Run the full verification suite: `rtk python -m pytest -q`, `rtk ruff check .`, `rtk mypy src`, and `rtk git diff --check`.**
 - [ ] **Step 5: Review the complete diff and commit `feat: complete Roblox puzzle asset pipeline MVP`.**
 
+### Task 11: Roblox import package batching
+
+**Files:**
+- Create: `src/puzzle_pipeline/roblox.py`
+- Modify: `src/puzzle_pipeline/cli/main.py`
+- Create: `docs/superpowers/specs/2026-08-08-roblox-import-package-design.md`
+- Modify: `README.md`
+- Modify: `docs/roblox-import.md`
+- Test: `tests/unit/test_roblox_package.py`
+- Test: `tests/integration/test_batch_images.py`
+- Test: `tests/integration/test_cli.py`
+
+**Interfaces:**
+- `batch_images(input_dir, output_root, start_number=7, atlas_size=2048, skip_blender=False) -> tuple[RobloxPackageResult, ...]`.
+- `write_roblox_package(spec, config, core, output_root, blender_status) -> RobloxPackageResult` writes the exact Roblox contract filenames.
+- CLI command: `puzzle batch --input ./images --output ./assets/puzzles`.
+
+- [x] Write and run failing tests for exact package filenames, metadata overrides, completion-image copying, stable numbering, and missing Blender reports.
+- [x] Implement known-image metadata mapping, orientation-derived grid defaults, contract-only copying, and explicit unavailable export reports.
+- [x] Verify the supplied four-image batch produces `puzzle_007` through `puzzle_010` with all non-FBX contract files.
+- [x] Document manual staging under `Workspace.ImportStaging/Puzzle_NNN_Raw`.

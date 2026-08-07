@@ -1,0 +1,660 @@
+{
+  "atlas": {
+    "artwork_pixels": [
+      358,
+      264,
+      1332,
+      1776
+    ],
+    "back_pixels": [
+      8,
+      8,
+      1012,
+      240
+    ],
+    "filename": "puzzle_008_atlas.png",
+    "sides_pixels": [
+      1028,
+      8,
+      1012,
+      240
+    ],
+    "size": 2048
+  },
+  "board": {
+    "height": 4.0,
+    "thickness": 0.07,
+    "width": 3.0
+  },
+  "exports": {
+    "blend": null,
+    "fbx": null,
+    "glb": null
+  },
+  "generator_version": "0.1.0",
+  "grid": {
+    "columns": 3,
+    "rows": 4
+  },
+  "material": {
+    "name": "PuzzleAtlas",
+    "shared": true
+  },
+  "pieces": [
+    {
+      "column": 0,
+      "connectors": {
+        "bottom": "flat",
+        "left": "flat",
+        "right": "tab",
+        "top": "tab"
+      },
+      "id": "piece_r00_c00",
+      "neighbors": {
+        "bottom": null,
+        "left": null,
+        "right": "piece_r00_c01",
+        "top": "piece_r01_c00"
+      },
+      "row": 0,
+      "seam_ids": {
+        "bottom": null,
+        "left": null,
+        "right": "seam_v_r00_c01",
+        "top": "seam_h_r01_c00"
+      },
+      "solved_transform": {
+        "position": [
+          -1.0,
+          -1.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 100,
+      "visual_bounds": {
+        "max": [
+          -0.31588335518863697,
+          -0.8206561542780438
+        ],
+        "min": [
+          -1.5,
+          -2.0
+        ]
+      }
+    },
+    {
+      "column": 1,
+      "connectors": {
+        "bottom": "flat",
+        "left": "hole",
+        "right": "tab",
+        "top": "tab"
+      },
+      "id": "piece_r00_c01",
+      "neighbors": {
+        "bottom": null,
+        "left": "piece_r00_c00",
+        "right": "piece_r00_c02",
+        "top": "piece_r01_c01"
+      },
+      "row": 0,
+      "seam_ids": {
+        "bottom": null,
+        "left": "seam_v_r00_c01",
+        "right": "seam_v_r00_c02",
+        "top": "seam_h_r01_c01"
+      },
+      "solved_transform": {
+        "position": [
+          0.0,
+          -1.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 144,
+      "visual_bounds": {
+        "max": [
+          0.6672285866429422,
+          -0.8340013100581125
+        ],
+        "min": [
+          -0.5,
+          -2.0
+        ]
+      }
+    },
+    {
+      "column": 2,
+      "connectors": {
+        "bottom": "flat",
+        "left": "hole",
+        "right": "flat",
+        "top": "tab"
+      },
+      "id": "piece_r00_c02",
+      "neighbors": {
+        "bottom": null,
+        "left": "piece_r00_c01",
+        "right": null,
+        "top": "piece_r01_c02"
+      },
+      "row": 0,
+      "seam_ids": {
+        "bottom": null,
+        "left": "seam_v_r00_c02",
+        "right": null,
+        "top": "seam_h_r01_c02"
+      },
+      "solved_transform": {
+        "position": [
+          1.0,
+          -1.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 100,
+      "visual_bounds": {
+        "max": [
+          1.5,
+          -0.8409941436646851
+        ],
+        "min": [
+          0.5,
+          -2.0
+        ]
+      }
+    },
+    {
+      "column": 0,
+      "connectors": {
+        "bottom": "hole",
+        "left": "flat",
+        "right": "tab",
+        "top": "tab"
+      },
+      "id": "piece_r01_c00",
+      "neighbors": {
+        "bottom": "piece_r00_c00",
+        "left": null,
+        "right": "piece_r01_c01",
+        "top": "piece_r02_c00"
+      },
+      "row": 1,
+      "seam_ids": {
+        "bottom": "seam_h_r01_c00",
+        "left": null,
+        "right": "seam_v_r01_c01",
+        "top": "seam_h_r02_c00"
+      },
+      "solved_transform": {
+        "position": [
+          -1.0,
+          -0.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 144,
+      "visual_bounds": {
+        "max": [
+          -0.31536364028287606,
+          0.1964437031618912
+        ],
+        "min": [
+          -1.5,
+          -1.0
+        ]
+      }
+    },
+    {
+      "column": 1,
+      "connectors": {
+        "bottom": "hole",
+        "left": "hole",
+        "right": "tab",
+        "top": "tab"
+      },
+      "id": "piece_r01_c01",
+      "neighbors": {
+        "bottom": "piece_r00_c01",
+        "left": "piece_r01_c00",
+        "right": "piece_r01_c02",
+        "top": "piece_r02_c01"
+      },
+      "row": 1,
+      "seam_ids": {
+        "bottom": "seam_h_r01_c01",
+        "left": "seam_v_r01_c01",
+        "right": "seam_v_r01_c02",
+        "top": "seam_h_r02_c01"
+      },
+      "solved_transform": {
+        "position": [
+          0.0,
+          -0.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 188,
+      "visual_bounds": {
+        "max": [
+          0.6922082742512725,
+          0.1832709299377456
+        ],
+        "min": [
+          -0.5,
+          -1.0
+        ]
+      }
+    },
+    {
+      "column": 2,
+      "connectors": {
+        "bottom": "hole",
+        "left": "hole",
+        "right": "flat",
+        "top": "tab"
+      },
+      "id": "piece_r01_c02",
+      "neighbors": {
+        "bottom": "piece_r00_c02",
+        "left": "piece_r01_c01",
+        "right": null,
+        "top": "piece_r02_c02"
+      },
+      "row": 1,
+      "seam_ids": {
+        "bottom": "seam_h_r01_c02",
+        "left": "seam_v_r01_c02",
+        "right": null,
+        "top": "seam_h_r02_c02"
+      },
+      "solved_transform": {
+        "position": [
+          1.0,
+          -0.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 144,
+      "visual_bounds": {
+        "max": [
+          1.5,
+          0.1705929274160846
+        ],
+        "min": [
+          0.5,
+          -1.0
+        ]
+      }
+    },
+    {
+      "column": 0,
+      "connectors": {
+        "bottom": "hole",
+        "left": "flat",
+        "right": "tab",
+        "top": "tab"
+      },
+      "id": "piece_r02_c00",
+      "neighbors": {
+        "bottom": "piece_r01_c00",
+        "left": null,
+        "right": "piece_r02_c01",
+        "top": "piece_r03_c00"
+      },
+      "row": 2,
+      "seam_ids": {
+        "bottom": "seam_h_r02_c00",
+        "left": null,
+        "right": "seam_v_r02_c01",
+        "top": "seam_h_r03_c00"
+      },
+      "solved_transform": {
+        "position": [
+          -1.0,
+          0.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 144,
+      "visual_bounds": {
+        "max": [
+          -0.30235810892802695,
+          1.1770496333511256
+        ],
+        "min": [
+          -1.5,
+          0.0
+        ]
+      }
+    },
+    {
+      "column": 1,
+      "connectors": {
+        "bottom": "hole",
+        "left": "hole",
+        "right": "tab",
+        "top": "tab"
+      },
+      "id": "piece_r02_c01",
+      "neighbors": {
+        "bottom": "piece_r01_c01",
+        "left": "piece_r02_c00",
+        "right": "piece_r02_c02",
+        "top": "piece_r03_c01"
+      },
+      "row": 2,
+      "seam_ids": {
+        "bottom": "seam_h_r02_c01",
+        "left": "seam_v_r02_c01",
+        "right": "seam_v_r02_c02",
+        "top": "seam_h_r03_c01"
+      },
+      "solved_transform": {
+        "position": [
+          0.0,
+          0.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 188,
+      "visual_bounds": {
+        "max": [
+          0.6800020344495775,
+          1.1879595046023614
+        ],
+        "min": [
+          -0.5,
+          0.0
+        ]
+      }
+    },
+    {
+      "column": 2,
+      "connectors": {
+        "bottom": "hole",
+        "left": "hole",
+        "right": "flat",
+        "top": "tab"
+      },
+      "id": "piece_r02_c02",
+      "neighbors": {
+        "bottom": "piece_r01_c02",
+        "left": "piece_r02_c01",
+        "right": null,
+        "top": "piece_r03_c02"
+      },
+      "row": 2,
+      "seam_ids": {
+        "bottom": "seam_h_r02_c02",
+        "left": "seam_v_r02_c02",
+        "right": null,
+        "top": "seam_h_r03_c02"
+      },
+      "solved_transform": {
+        "position": [
+          1.0,
+          0.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 144,
+      "visual_bounds": {
+        "max": [
+          1.5,
+          1.1792743600687257
+        ],
+        "min": [
+          0.5,
+          0.0
+        ]
+      }
+    },
+    {
+      "column": 0,
+      "connectors": {
+        "bottom": "hole",
+        "left": "flat",
+        "right": "tab",
+        "top": "flat"
+      },
+      "id": "piece_r03_c00",
+      "neighbors": {
+        "bottom": "piece_r02_c00",
+        "left": null,
+        "right": "piece_r03_c01",
+        "top": null
+      },
+      "row": 3,
+      "seam_ids": {
+        "bottom": "seam_h_r03_c00",
+        "left": null,
+        "right": "seam_v_r03_c01",
+        "top": null
+      },
+      "solved_transform": {
+        "position": [
+          -1.0,
+          1.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 100,
+      "visual_bounds": {
+        "max": [
+          -0.33053104335009686,
+          2.0
+        ],
+        "min": [
+          -1.5,
+          1.0
+        ]
+      }
+    },
+    {
+      "column": 1,
+      "connectors": {
+        "bottom": "hole",
+        "left": "hole",
+        "right": "tab",
+        "top": "flat"
+      },
+      "id": "piece_r03_c01",
+      "neighbors": {
+        "bottom": "piece_r02_c01",
+        "left": "piece_r03_c00",
+        "right": "piece_r03_c02",
+        "top": null
+      },
+      "row": 3,
+      "seam_ids": {
+        "bottom": "seam_h_r03_c01",
+        "left": "seam_v_r03_c01",
+        "right": "seam_v_r03_c02",
+        "top": null
+      },
+      "solved_transform": {
+        "position": [
+          0.0,
+          1.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 144,
+      "visual_bounds": {
+        "max": [
+          0.7005286620002213,
+          2.0
+        ],
+        "min": [
+          -0.5,
+          1.0
+        ]
+      }
+    },
+    {
+      "column": 2,
+      "connectors": {
+        "bottom": "hole",
+        "left": "hole",
+        "right": "flat",
+        "top": "flat"
+      },
+      "id": "piece_r03_c02",
+      "neighbors": {
+        "bottom": "piece_r02_c02",
+        "left": "piece_r03_c01",
+        "right": null,
+        "top": null
+      },
+      "row": 3,
+      "seam_ids": {
+        "bottom": "seam_h_r03_c02",
+        "left": "seam_v_r03_c02",
+        "right": null,
+        "top": null
+      },
+      "solved_transform": {
+        "position": [
+          1.0,
+          1.5,
+          0.0
+        ],
+        "rotation": [
+          0.0,
+          0.0,
+          0.0
+        ],
+        "scale": [
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "triangle_count": 100,
+      "visual_bounds": {
+        "max": [
+          1.5,
+          2.0
+        ],
+        "min": [
+          0.5,
+          1.0
+        ]
+      }
+    }
+  ],
+  "puzzle_id": "puzzle_008",
+  "schema_version": 1,
+  "seed": 8
+}

@@ -34,3 +34,17 @@ end
 Use `neighbors` and `seam_ids` for game logic instead of inferring topology from
 mesh geometry. Preserve the atlas texture assignment when uploading the model;
 the atlas is intentionally shared by every piece.
+
+## Batch package contract
+
+Run:
+
+```bash
+puzzle batch --input ./images --output ./assets/puzzles
+```
+
+Each numbered folder contains `manifest.json`, `manifest.validation.json`, the
+atlas and completion PNGs, `fbx_export_report.json`, `fbx_reimport_report.json`,
+and `roblox-overrides.json`. A real FBX is included only after Blender export
+succeeds; missing Blender is reported explicitly and never replaced by a fake
+file. Stage a successful FBX manually as `Workspace.ImportStaging/Puzzle_NNN_Raw`.

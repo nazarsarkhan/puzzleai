@@ -13,6 +13,7 @@ from puzzle_pipeline.config.loader import load_config
 from puzzle_pipeline.config.models import PuzzleConfig
 from puzzle_pipeline.pipeline import run_core_pipeline
 from puzzle_pipeline.reference import inspect_reference
+from puzzle_pipeline.roblox import batch_images
 
 
 def _parser() -> argparse.ArgumentParser:
@@ -39,6 +40,13 @@ def _parser() -> argparse.ArgumentParser:
 
     inspect = subparsers.add_parser("inspect", help="inspect a generated package")
     inspect.add_argument("package", type=Path)
+
+    batch = subparsers.add_parser("batch", help="batch artworks into Roblox import packages")
+    batch.add_argument("--input", type=Path, required=True)
+    batch.add_argument("--output", type=Path, default=Path("assets/puzzles"))
+    batch.add_argument("--start-number", type=int, default=7)
+    batch.add_argument("--atlas-size", type=int, default=2048)
+    batch.add_argument("--skip-blender", action="store_true")
     return parser
 
 
@@ -109,6 +117,20 @@ def _inspect(package: Path) -> int:
     return 0
 
 
+def _batch(args: argparse.Namespace) -> int:
+    results = batch_images(
+        args.input,
+        args.output,
+        start_number=args.start_number,
+        atlas_size=args.atlas_size,
+        skip_blender=args.skip_blender,
+    )
+    for result in results:
+        suffix = "" if result.export_status == "passed" else " (FBX unavailable)"
+        print(f"PASS {result.package_dir.name}{suffix}")
+    return 0
+
+
 def main(argv: Sequence[str] | None = None) -> int:
     parser = _parser()
     args = parser.parse_args(argv)
@@ -120,6 +142,8 @@ def main(argv: Sequence[str] | None = None) -> int:
             return _generate(args)
         if args.command == "validate":
             return _validate(args.package)
+        if args.command == "batch":
+            return _batch(args)
         return _inspect(args.package)
     except (FileNotFoundError, ValueError, json.JSONDecodeError) as exc:
         print(str(exc), file=sys.stderr)

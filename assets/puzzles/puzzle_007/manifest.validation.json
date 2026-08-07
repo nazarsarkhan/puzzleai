@@ -1,0 +1,41 @@
+{
+  "checks": {
+    "geometry": true,
+    "mesh:piece_r00_c00": true,
+    "mesh:piece_r00_c01": true,
+    "mesh:piece_r00_c02": true,
+    "mesh:piece_r01_c00": true,
+    "mesh:piece_r01_c01": true,
+    "mesh:piece_r01_c02": true,
+    "mesh:piece_r02_c00": true,
+    "mesh:piece_r02_c01": true,
+    "mesh:piece_r02_c02": true,
+    "outlines": true,
+    "topology": true,
+    "uv:piece_r00_c00": true,
+    "uv:piece_r00_c01": true,
+    "uv:piece_r00_c02": true,
+    "uv:piece_r01_c00": true,
+    "uv:piece_r01_c01": true,
+    "uv:piece_r01_c02": true,
+    "uv:piece_r02_c00": true,
+    "uv:piece_r02_c01": true,
+    "uv:piece_r02_c02": true
+  },
+  "errors": [],
+  "expectedPieceCount": 9,
+  "exportStatus": "unavailable",
+  "metrics": {
+    "bevel_width": 0.012,
+    "degenerate_triangles": 0.0,
+    "non_manifold_edges": 0.0,
+    "pieces": 9.0,
+    "seams": 12.0,
+    "signed_volume": 0.11563815589789175,
+    "triangles": 100.0,
+    "uv_count": 52.0
+  },
+  "status": "passed",
+  "valid": true,
+  "validatedPieceCount": 9
+}

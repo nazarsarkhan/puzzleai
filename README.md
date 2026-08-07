@@ -44,6 +44,16 @@ Use `--skip-blender` only when Blender is not installed. A normal production run
 invokes Blender headlessly and writes the `.blend`, FBX, optional GLB, and clean
 scene re-import report.
 
+To batch the supplied artwork directory into the Roblox repository contract:
+
+```bash
+puzzle batch --input ./images --output ./assets/puzzles
+```
+
+The initial image mapping is stable: Black Square → `puzzle_007`, Mona Lisa →
+`puzzle_008`, graffiti portrait → `puzzle_009`, and mountain landscape →
+`puzzle_010`. Unknown attribution is recorded as `Unknown`.
+
 ## Validate and inspect
 
 ```bash

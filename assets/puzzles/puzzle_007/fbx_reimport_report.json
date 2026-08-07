@@ -1,0 +1,7 @@
+{
+  "command": [],
+  "message": "Blender executable not found; core artifacts remain valid.",
+  "status": "unavailable",
+  "stderr": "",
+  "valid": false
+}

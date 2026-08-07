@@ -29,3 +29,16 @@ def test_cli_reports_missing_artwork(tmp_path, capsys) -> None:
     config.write_text(json.dumps({"puzzle_id": "bad"}), encoding="utf-8")
     assert main(["generate", "--image", str(tmp_path / "missing.png"), "--config", str(config), "--skip-blender"]) == 2
     assert "Artwork image not found" in capsys.readouterr().err
+
+
+def test_cli_batches_images_into_roblox_packages(tmp_path, capsys) -> None:
+    image_dir = tmp_path / "images"
+    image_dir.mkdir()
+    Image.new("RGB", (8, 8), (1, 2, 3)).save(image_dir / "square.png")
+    Image.new("RGB", (8, 12), (4, 5, 6)).save(image_dir / "portrait.png")
+    output = tmp_path / "assets" / "puzzles"
+
+    assert main(["batch", "--input", str(image_dir), "--output", str(output), "--atlas-size", "256"]) == 0
+    assert (output / "puzzle_007" / "roblox-overrides.json").is_file()
+    assert (output / "puzzle_008" / "manifest.validation.json").is_file()
+    assert "puzzle_007" in capsys.readouterr().out
